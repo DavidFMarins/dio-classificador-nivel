@@ -1,17 +1,13 @@
-const {print, nivelAtual} = require('./funções');
+const {print} = require('./funções');
 
 const nome = "David";
-const n = nivelAtual();
-
+let quantidadeExp = 0;
  
 let nivel = "Ferro";
-let i = 0;
 
-while ( i < 9 ) {
-
-    for (let  i= 0; i < n; i++) {
-        const quantidadeExp = nivelAtual();    
-
+do {   
+        print(" O Herói de nome " + nome + " está no nível de " + nivel);
+        quantidadeExp += 1000; 
             if (quantidadeExp <= 1000) {
             nivel = "Ferro";
         }   else if (quantidadeExp > 1000 && quantidadeExp <= 2000) {
@@ -26,12 +22,12 @@ while ( i < 9 ) {
                 nivel = "Ascendente";
         }   else if (quantidadeExp > 9000 && quantidadeExp <= 10000) {
                 nivel = "Imortal";
-        }   else if (quantidadeExp >= 10001) {
+        }   else if (quantidadeExp >= 10001 && quantidadeExp < 12000) {
                 nivel = "Radiante";
+        }  else if (quantidadeExp >= 12000) {
+                nivel = "Maximo";
         }
-    }
-    
-    i++;
-    
-}
-print(" O Herói de nome " + nome + " está no nível de " + nivel);
+
+    } while ( nivel != "Maximo"); 
+
+
